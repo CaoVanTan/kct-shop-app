@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KCT Shop</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">nSxtma9g1PegBL7uuaBgcnKM72y9zpCgA5rRu</string>
+    <string name="appCenterCrashes_whenToSendCrashes" moduleConfig="true" translatable="false">DO_NOT_ASK_JAVASCRIPT</string>
+    <string name="appCenterAnalytics_whenToEnableAnalytics" moduleConfig="true" translatable="false">ALWAYS_SEND</string>
+    <string name="channel_push_notification">channel_push_notification</string> 
+</resources>

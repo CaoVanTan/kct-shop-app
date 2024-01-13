@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "252758159487",
+    "project_id": "kct-shop-4599d",
+    "storage_bucket": "kct-shop-4599d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252758159487:android:618cef557402c2ca4b0f4a",
+        "android_client_info": {
+          "package_name": "com.kct_shop_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJh64XPOQ3mAJh_vp8pzfzGIZVzX2Sz2s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
