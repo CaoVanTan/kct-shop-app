@@ -147,7 +147,7 @@ function Addresses() {
               bold
               H5
               style={alignment.Msmall}>
-              Không có địa chỉ.
+              {i18n.t('noNotifications')}
             </TextDefault>
             <View>
               <TextDefault textColor={colors.fontSecondColor} center>
@@ -161,7 +161,7 @@ function Addresses() {
               style={styles.adressBtn}
               onPress={() => navigation.navigate(NAVIGATION_SCREEN.NewAddress)}>
               <TextDefault textColor={colors.white} H5 bold>
-                Thêm địa chỉ mới
+                {i18n.t('addAddress')}
               </TextDefault>
             </TouchableOpacity>
           </View>
@@ -214,10 +214,10 @@ function Addresses() {
                     bold
                     H5
                     style={[alignment.MTxSmall, alignment.MLsmall]}>
-                    {
+                    {i18n.t(
                       LABEL_ADDRESS.find((item) => item.value === address.label)
-                        .title
-                    }
+                        .title,
+                    )}
                   </TextDefault>
                 </View>
                 <View style={[styles.titleAddress]}>

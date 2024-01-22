@@ -235,7 +235,7 @@ function Cart() {
                     style={{ width: '30%' }}
                     medium
                     H5>
-                    Tổng tiền
+                    {i18n.t('totalAmount')}
                   </TextDefault>
                   <TextDefault
                     numberOfLines={1}

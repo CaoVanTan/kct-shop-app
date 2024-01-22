@@ -73,7 +73,7 @@ function Orders() {
               },
             ]}>
             <TextDefault bold H5 numberOfLines={1}>
-              Chờ giao hàng
+              {i18n.t('waitingForDelivery')}
             </TextDefault>
           </TouchableOpacity>
           <TouchableOpacity
@@ -88,7 +88,7 @@ function Orders() {
               },
             ]}>
             <TextDefault bold H5 numberOfLines={1}>
-              Lịch sử
+              {i18n.t('history')}
             </TextDefault>
           </TouchableOpacity>
         </View>

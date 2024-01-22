@@ -19,6 +19,7 @@ import { getProductDetail } from '../../api/Home/Home';
 import styles from '../../components/CustomizeComponents/TitleComponent/styles';
 import Database from '../../configs/Database';
 import { onSetCart } from '../../redux/actions/cartAction';
+import i18n from '../../configs/i18n';
 
 function ItemDetail() {
   const route = useRoute();
@@ -36,7 +37,7 @@ function ItemDetail() {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: 'Thông tin chi tiết',
+      title: i18n.t('infoDetail'),
       headerRight: () => null,
     });
   }, [navigation]);
@@ -130,7 +131,7 @@ function ItemDetail() {
   if (isLoading) {
     return <Spinner />;
   }
-  console.log(product);
+
   return (
     <WrapperView>
       <View style={styles.flex}>
@@ -147,7 +148,7 @@ function ItemDetail() {
             <View style={styles.line} />
             {product.has_sugar && (
               <View>
-                <TitleComponent title="Chọn mức đường" />
+                <TitleComponent title={i18n.t('selectSugar')} />
                 <View style={[alignment.PLmedium, alignment.PRmedium]}>
                   <RadioComponent
                     type="sugar"
@@ -160,7 +161,7 @@ function ItemDetail() {
             )}
             {product.has_ice && (
               <View>
-                <TitleComponent title="Chọn mức đá" />
+                <TitleComponent title={i18n.t('selectIce')} />
                 <View style={[alignment.PLmedium, alignment.PRmedium]}>
                   <RadioComponent
                     type="ice"
@@ -173,7 +174,7 @@ function ItemDetail() {
             )}
             {product.size_ids.length > 0 && (
               <View>
-                <TitleComponent title="Chọn kích cỡ" />
+                <TitleComponent title={i18n.t('selectSize')} />
                 <View style={[alignment.PLmedium, alignment.PRmedium]}>
                   <RadioComponent
                     options={product.size_ids}
@@ -185,7 +186,7 @@ function ItemDetail() {
             )}
             {product.topping_ids.length > 0 && (
               <View>
-                <TitleComponent title="Chọn topping" />
+                <TitleComponent title={i18n.t('selectTopping')} />
                 <View style={[alignment.PLmedium, alignment.PRmedium]}>
                   <CheckComponent
                     options={product.topping_ids}
@@ -222,7 +223,7 @@ function TitleComponent(props) {
         H5
         medium
         center>
-        ({props.status})
+        {props.status}
       </TextDefault>
     </View>
   );

@@ -149,7 +149,7 @@ function Login() {
                 />
               </TouchableOpacity>
               <TextDefault center H4 bold>
-                Đăng nhập
+                {i18n.t('loginBtn')}
               </TextDefault>
               <View style={styles.backBtnWidth} />
             </View>
@@ -163,7 +163,7 @@ function Login() {
               </View>
               <View style={styles.width100}>
                 <TextDefault medium textColor={colors.fontSecondColor}>
-                  Nhập Email và Mật khẩu của bạn
+                  {i18n.t('enterEmailPassword')}
                 </TextDefault>
                 <View style={styles.marginTop3} />
                 {/* <FilledTextField
@@ -215,7 +215,7 @@ function Login() {
                   }}
                 />
                 <TextInput
-                  placeholder="Mật khẩu"
+                  placeholder={i18n.t('password')}
                   secureTextEntry
                   multiline={false}
                   cursorColor={colors.fontMainColor}
@@ -235,7 +235,7 @@ function Login() {
                     style={[alignment.PTmedium, alignment.PBxSmall]}
                     medium
                     center>
-                    Quên mật khẩu?
+                    {i18n.t('forgotPassword')}?
                   </TextDefault>
                 </TouchableOpacity>
                 <View style={[styles.marginTop3]}>{renderLoginAction()}</View>
@@ -246,7 +246,7 @@ function Login() {
                     navigation.navigate(NAVIGATION_SCREEN.Register)
                   }>
                   <TextDefault bold center>
-                    Bạn chưa có tài khoản? Đăng ký
+                    {i18n.t('notHaveAccount')}
                   </TextDefault>
                 </TouchableOpacity>
               </View>

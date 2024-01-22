@@ -35,41 +35,36 @@ import { moderateScale, scale } from '../../utils/scaling';
 import useStyle from './styles';
 import { cancelOrder, getOrderDetail } from '../../api/Order/Order';
 import { formatCurrency } from '../../utils/format';
+import i18n from '../../configs/i18n';
 
 const ORDER_STATUSES = [
   {
     key: 'pending',
-    name: 'Chờ xác nhận',
     status: 1,
     statusText: 'Đơn hàng của bạn vẫn đang chờ xử lý.',
   },
   {
     key: 'received',
-    name: 'Chờ giao hàng',
     status: 2,
     statusText: 'Cửa hàng đang chuẩn bị đồ uống.',
   },
   {
     key: 'waiting',
-    name: 'Chờ lấy hàng',
     status: 3,
     statusText: 'Đồ uống đã được giao cho nhân viên giao hàng.',
   },
   {
     key: 'delivering',
-    name: 'Đang giao hàng',
     status: 4,
     statusText: 'Đồ uống đang được giao đến bạn.',
   },
   {
     key: 'delivered',
-    name: 'Đã giao hàng',
     status: 5,
     statusText: 'Đồ uống đã được giao đến bạn thành công.',
   },
   {
     key: 'done',
-    name: 'Hoàn thành',
     status: 6,
     statusText: 'Đơn hàng đã hoàn thành.',
   },
@@ -93,7 +88,7 @@ function OrderDetail() {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerTitle: 'Chi tiết đơn hàng',
+      headerTitle: i18n.t('detailOrder'),
       headerRight: null,
     });
   }, [navigation]);
@@ -155,7 +150,9 @@ function OrderDetail() {
     item.topping_ids.map((i) => {
       toppingStr = toppingStr + i.name + ', ';
     });
-    return `Size ${item.size_id.name}, ${toppingStr}${item.sugar}% đường,  ${item.ice}% đá`;
+    return `Size ${item.size_id.name}, ${toppingStr}${item.sugar}% ${i18n.t(
+      'sugar',
+    )},  ${item.ice}% ${i18n.t('ice')}`;
   };
 
   const onClose = () => {
@@ -175,14 +172,14 @@ function OrderDetail() {
             bolder
             H3
             style={alignment.MBsmall}>
-            Cảm ơn bạn!
+            {i18n.t('thank')}!
           </TextDefault>
           <TextDefault
             textColor={colors.fontSecondColor}
             medium
             H5
             style={[alignment.MTsmall]}>
-            Mã đơn hàng của bạn là
+            {i18n.t('orderCodeIs')}
           </TextDefault>
           <TextDefault H4 bolder style={alignment.PTxSmall}>
             {order.name}
@@ -192,14 +189,14 @@ function OrderDetail() {
             bold
             H5
             style={[alignment.MTlarge]}>
-            Trạng thái
+            {i18n.t('status')}
           </TextDefault>
           <TextDefault
             textColor={colors.buttonBackgroundBlue}
             H5
             medium
             style={[alignment.MBsmall, alignment.MTxSmall]}>
-            {checkStatus(orderState) ? checkStatus(orderState).name : ''}{' '}
+            {checkStatus(orderState) ? i18n.t(checkStatus(orderState).key) : ''}{' '}
             <TextDefault medium>
               (
               {checkStatus(orderState)
@@ -209,7 +206,7 @@ function OrderDetail() {
             </TextDefault>
           </TextDefault>
           <TextDefault textColor={colors.fontSecondColor} H5 bold>
-            Địa chỉ giao hàng
+            {i18n.t('deliveryAddress')}
           </TextDefault>
           <TextDefault style={{ ...alignment.PTxSmall }} H5>
             {order.address_id
@@ -246,7 +243,7 @@ function OrderDetail() {
               textColor={colors.fontMainColor}
               bold
               style={{ width: '40%' }}>
-              Tổng tiền
+              {i18n.t('totalAmount')}
             </TextDefault>
             <TextDefault
               textColor={colors.fontMainColor}
@@ -276,7 +273,7 @@ function OrderDetail() {
               }}
               onPress={() => modalizeRef.current.open('top')}>
               <TextDefault H5 bold textColor={colors.lightBackground}>
-                Hủy đơn hàng
+                {i18n.t('cancelOrder')}
               </TextDefault>
             </TouchableOpacity>
           </View>
@@ -290,7 +287,7 @@ function OrderDetail() {
             }}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
               <TextDefault textColor={colors.fontSecondColor} H5 bold>
-                Nhân viên giao hàng:
+                {i18n.t('shipper')}:
               </TextDefault>
               <TextDefault
                 style={{
@@ -310,7 +307,7 @@ function OrderDetail() {
                 ...alignment.MBsmall,
               }}>
               <TextDefault textColor={colors.fontSecondColor} H5 bold>
-                Số điện thoại:
+                {i18n.t('phone')}:
               </TextDefault>
               <TextDefault
                 style={{
@@ -336,7 +333,7 @@ function OrderDetail() {
                   style={{ marginLeft: 8 }}
                   textColor={colors.lightBackground}
                   bold>
-                  Gọi điện
+                  {i18n.t('call')}
                 </TextDefault>
               </TouchableOpacity>
             </View>
@@ -373,7 +370,7 @@ function OrderDetail() {
                 H5
                 bold
                 center>
-                Đánh giá đơn hàng
+                {i18n.t('rating')}
               </TextDefault>
             </TouchableOpacity>
           </View>
@@ -392,7 +389,7 @@ function OrderDetail() {
         keyboardAvoidingBehavior="height">
         <View style={{ flex: 1, alignItems: 'center' }}>
           <TextDefault bolder H5 style={{ marginTop: 20 }}>
-            Bạn có chắc chắn muốn hủy đơn hàng?
+            {i18n.t('confirmCancelOrder')}
           </TextDefault>
           <TouchableOpacity
             activeOpacity={0.7}
@@ -414,7 +411,7 @@ function OrderDetail() {
               />
             ) : (
               <TextDefault center bolder>
-                Đồng ý
+                {i18n.t('agree')}
               </TextDefault>
             )}
           </TouchableOpacity>
@@ -422,7 +419,7 @@ function OrderDetail() {
             activeOpacity={0.7}
             style={[alignment.PBlarge, alignment.PTlarge, { width: '100%' }]}
             onPress={() => onClose()}>
-            <TextDefault center>Hủy</TextDefault>
+            <TextDefault center>{i18n.t('cancelled')}</TextDefault>
           </TouchableOpacity>
         </View>
       </Modalize>

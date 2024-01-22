@@ -14,6 +14,7 @@ import {
 } from '../../utils/constant';
 import useStyle from './styles';
 import { hasLocationPermission } from '../../services/Location';
+import i18n from '../../configs/i18n';
 
 const mapStyle = [
   {
@@ -196,7 +197,7 @@ export default function FullMap() {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: 'Bản đồ',
+      title: i18n.t('map'),
       headerRight: null,
     });
   }, [navigation]);
@@ -288,7 +289,7 @@ export default function FullMap() {
             style={styles.button}
             onPress={onSave}>
             <TextDefault textColor={colors.white} H4 bold>
-              Lưu
+              {i18n.t('save')}
             </TextDefault>
           </TouchableOpacity>
         </View>

@@ -12,6 +12,7 @@ import RadioBtn from '../../FdRadioBtn/RadioBtn';
 import TextDefault from '../../Text/TextDefault/TextDefault';
 import useStyle from './styles';
 import { formatCurrency } from '../../../utils/format';
+import i18n from '../../../configs/i18n';
 
 const FilterModal = (props) => {
   const styles = useStyle();
@@ -67,7 +68,7 @@ const FilterModal = (props) => {
           alignment.PTsmall,
         ]}>
         <TextDefault H5 bold>
-          Lọc
+          {i18n.t('filter')}
         </TextDefault>
         <TouchableOpacity
           onPress={clearItems}
@@ -76,7 +77,7 @@ const FilterModal = (props) => {
             alignItems: 'center',
           }}>
           <TextDefault H5 bold textColor={colors.buttonBackgroundBlue}>
-            Bỏ lọc
+            {i18n.t('removeFilter')}
           </TextDefault>
           <Icon name="refresh" size={22} color={colors.buttonBackgroundBlue} />
         </TouchableOpacity>
@@ -85,7 +86,7 @@ const FilterModal = (props) => {
 
       <View style={styles.priceRangeRow}>
         <TextDefault bold H5>
-          Khoảng Giá
+          {i18n.t('rangePrice')}
         </TextDefault>
         <View>
           <TextDefault bold H5 center>
@@ -131,7 +132,7 @@ const FilterModal = (props) => {
         </View>
       </View>
       <TextDefault bold H5 style={alignment.MTlarge}>
-        Sắp xếp
+        {i18n.t('order')}
       </TextDefault>
       <View style={[alignment.PLlarge, alignment.PRlarge, alignment.MTmedium]}>
         {keys(SORT_DATA).map((item) => {
@@ -149,7 +150,7 @@ const FilterModal = (props) => {
                     ? colors.fonfontMainColort
                     : colors.placeHolderColor
                 }>
-                {get(SORT_DATA, item)}
+                {i18n.t(get(SORT_DATA, item))}
               </TextDefault>
               <RadioBtn
                 size={10}
@@ -166,13 +167,13 @@ const FilterModal = (props) => {
       <View style={[alignment.PLlarge, alignment.PRlarge]}>
         <TouchableOpacity style={styles.applyBtn} onPress={applyFilters}>
           <TextDefault H5 bold textColor={colors.lightBackground}>
-            Áp dụng
+            {i18n.t('apply')}
           </TextDefault>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => props.closeFilterModal()}
           style={[styles.width100, alignment.PBmedium, alignment.PTlarge]}>
-          <TextDefault center>Đóng</TextDefault>
+          <TextDefault center>{i18n.t('close')}</TextDefault>
         </TouchableOpacity>
       </View>
     </View>

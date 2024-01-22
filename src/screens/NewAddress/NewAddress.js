@@ -275,7 +275,7 @@ function NewAddress() {
                             }
                             bold
                             center>
-                            {label.title}
+                            {i18n.t(label.title)}
                           </TextDefault>
                         </TouchableOpacity>
                       );
@@ -302,8 +302,8 @@ function NewAddress() {
                       value={deliveryAddress}
                       label={
                         deliveryAddress
-                          ? i18n.t('fullDeliveryAddress')
-                          : 'Chọn địa chỉ giao hàng'
+                          ? i18n.t('deliveryAddress')
+                          : i18n.t('selectDeliveryAddress')
                       }
                       labelFontSize={scale(12)}
                       multiline={true}

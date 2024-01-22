@@ -121,11 +121,11 @@ function CartAddresses() {
                       />
                     </View>
                     <TextDefault style={{ width: '78%' }} H5 bold>
-                      {
+                      {i18n.t(
                         LABEL_ADDRESS.find(
                           (item) => item.value === address.label,
-                        ).title
-                      }
+                        ).title,
+                      )}
                     </TextDefault>
                     <TouchableOpacity
                       activeOpacity={0.7}

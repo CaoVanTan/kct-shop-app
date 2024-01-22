@@ -13,6 +13,7 @@ import AuthenticationContext from '../../context/Authentication';
 import { alignment } from '../../utils/alignment';
 import { NAVIGATION_SCREEN } from '../../utils/constant';
 import useStyle from './styles';
+import i18n from '../../configs/i18n';
 
 // const Logo = require('../../../assets/logo.png');
 
@@ -74,7 +75,7 @@ const CreateAccount = () => {
   return (
     <WrapperView>
       <View style={[styles.mainContainer, styles.flex]}>
-        <RegistrationHeader title={'Bắt Đầu'} />
+        <RegistrationHeader title={i18n.t('start')} />
         <View style={styles.subContainer}>
           <View style={[styles.flex, styles.upperContainer]}>
             {/* <AppImage
@@ -90,7 +91,7 @@ const CreateAccount = () => {
               style={styles.alreadyBtn}
               onPress={() => navigation.navigate(NAVIGATION_SCREEN.Login)}>
               <TextDefault style={[alignment.MLsmall]} bold>
-                Bạn đã có tài khoản? Đăng nhập
+                {i18n.t('alreadyHaveAccount')}
               </TextDefault>
             </TouchableOpacity>
           </View>

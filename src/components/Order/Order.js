@@ -11,46 +11,41 @@ import AppImage from '../AppImage/AppImage';
 import TextDefault from '../Text/TextDefault/TextDefault';
 import useStyle from './styles';
 import { formatCurrency } from '../../utils/format';
+import i18n from '../../configs/i18n';
 
 export const orderStatuses = [
   {
     key: 'pending',
-    name: 'Chờ xác nhận',
     status: 1,
     icon: ICONS_NAME.Clock,
     color: COLORS.primary,
   },
   {
     key: 'received',
-    name: 'Chờ giao hàng',
     status: 2,
     icon: ICONS_NAME.Checked,
     color: COLORS.blueColor,
   },
   {
     key: 'waiting',
-    name: 'Chờ lấy hàng',
     status: 3,
     icon: ICONS_NAME.Checked,
     color: COLORS.blueColor,
   },
   {
     key: 'delivering',
-    name: 'Đang giao hàng',
     status: 4,
     icon: ICONS_NAME.Checked,
     color: COLORS.blueColor,
   },
   {
     key: 'delivered',
-    name: 'Đã giao hàng',
     status: 5,
     icon: ICONS_NAME.Checked,
     color: COLORS.blueColor,
   },
   {
     key: 'done',
-    name: 'Hoàn thành',
     status: 6,
     icon: ICONS_NAME.Checked,
     color: COLORS.blueColor,
@@ -107,7 +102,7 @@ const Order = ({ data }) => {
             style={alignment.MTxSmall}
             bold
             center>
-            {checkStatus(data.state).name}
+            {i18n.t(checkStatus(data.state).key)}
           </TextDefault>
         </View>
       </View>

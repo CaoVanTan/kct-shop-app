@@ -163,7 +163,7 @@ function Settings() {
                 numberOfLines={1}
                 textColor={colors.statusSecondColor}
                 medium>
-                Địa chỉ của tôi
+                {i18n.t('myAddress')}
               </TextDefault>
               <TouchableOpacity
                 activeOpacity={0.5}
@@ -185,7 +185,7 @@ function Settings() {
                   numberOfLines={1}
                   textColor={colors.statusSecondColor}
                   medium>
-                  Ngôn ngữ{' '}
+                  {i18n.t('language')}
                 </TextDefault>
                 <TextDefault textColor={colors.statusSecondColor} medium>
                   ({languageName})
@@ -244,7 +244,7 @@ function Settings() {
 
           <View style={styles.versionContainer}>
             <TextDefault textColor={colors.fontSecondColor}>
-              Phiên bản: 1.0.0
+              {i18n.t('version')}: 1.0.0
             </TextDefault>
           </View>
         </View>

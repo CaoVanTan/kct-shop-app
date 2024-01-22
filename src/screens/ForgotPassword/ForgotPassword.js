@@ -72,7 +72,7 @@ function ForgotPassword() {
           showsVerticalScrollIndicator={false}
           alwaysBounceVertical={false}>
           <View style={styles.mainContainer}>
-            <RegistrationHeader title={'Quên mật khẩu'} back />
+            <RegistrationHeader title={i18n.t('forgotPassword')} back />
             <View style={styles.subContainer}>
               <View style={[styles.flex, styles.upperContainer]}>
                 <AppImage
@@ -105,7 +105,7 @@ function ForgotPassword() {
                   tintColor={colors.selected}
                   labelTextStyle={styles.labelStyle}
                   inputContainerStyle={styles.textContainer}
-                  onChangeText={text => {
+                  onChangeText={(text) => {
                     setEmail(text.trim());
                   }}
                 />
@@ -113,7 +113,7 @@ function ForgotPassword() {
                   // disabled={loading}
                   style={styles.actionBtn}
                   activeOpacity={0.7}
-                  onPress={event => {
+                  onPress={(event) => {
                     // if (validateCredentials() && !loading) {
                     //   mutate({
                     //     variables: { email: email.toLowerCase().trim() },

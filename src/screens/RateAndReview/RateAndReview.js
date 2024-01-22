@@ -79,7 +79,7 @@ function RateAndReview() {
       <View style={[styles.flex]}>
         <View style={styles.reviewTextContainer}>
           <TextDefault H4 bold style={{ width: '30%' }}>
-            Nhân viên giao hàng
+            {i18n.t('shipper')}
           </TextDefault>
           <StarRating
             color={colors.startColor}
@@ -90,7 +90,7 @@ function RateAndReview() {
         </View>
         <View style={styles.reviewTextContainer}>
           <TextDefault H4 bold style={{ width: '30%' }}>
-            Đồ uống
+            {i18n.t('drinks')}
           </TextDefault>
           <StarRating
             color={colors.startColor}
@@ -145,7 +145,7 @@ function RateAndReview() {
                   H4
                   bold
                   style={{ ...alignment.PTxSmall, ...alignment.PBxSmall }}>
-                  Gửi đánh giá
+                  {i18n.t('submitRating')}
                 </TextDefault>
               </TouchableOpacity>
             )}

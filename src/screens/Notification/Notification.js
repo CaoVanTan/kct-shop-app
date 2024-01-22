@@ -57,7 +57,7 @@ const Notification = () => {
         </View>
         <View style={styles.descriptionEmpty}>
           <TextDefault bolder center H4>
-            Không có thông báo
+            {i18n.t('noNotifications')}
           </TextDefault>
         </View>
       </View>

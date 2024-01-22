@@ -199,7 +199,7 @@ function EditAddress() {
                           }
                           bold
                           center>
-                          {label.title}
+                          {i18n.t(label.title)}
                         </TextDefault>
                       </TouchableOpacity>
                     );
@@ -225,7 +225,7 @@ function EditAddress() {
                     ref={addressRef}
                     editable={false}
                     value={deliveryAddress}
-                    label={i18n.t('fullDeliveryAddress')}
+                    label={i18n.t('deliveryAddress')}
                     fontSize={scale(12)}
                     labelFontSize={scale(12)}
                     activeLineWidth={0}

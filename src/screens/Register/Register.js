@@ -24,6 +24,7 @@ import { scale, verticalScale } from '../../utils/scaling';
 import useStyle from './styles';
 import { signUp } from '../../api/Auth/Auth';
 import { useSelector } from 'react-redux';
+import i18n from '../../configs/i18n';
 
 const Logo = require('../../../assets/logo.png');
 
@@ -150,7 +151,7 @@ function Register() {
           handleSignUp();
           // }
         }}>
-        <TextDefault bold>Đăng ký</TextDefault>
+        <TextDefault bold>{i18n.t('register')}</TextDefault>
       </TouchableOpacity>
     );
   }
@@ -177,7 +178,7 @@ function Register() {
               />
             </TouchableOpacity>
             <TextDefault center H4 bold>
-              Đăng ký
+              {i18n.t('register')}
             </TextDefault>
             <View style={styles.backBtnWidth} />
           </View>
@@ -232,7 +233,7 @@ function Register() {
                 }}
               /> */}
               <TextInput
-                placeholder="Họ và tên"
+                placeholder={i18n.t('name')}
                 keyboardType="default"
                 cursorColor={colors.fontMainColor}
                 selectionColor={colors.fontMainColor}
@@ -293,7 +294,7 @@ function Register() {
                 }}
               /> */}
               <TextInput
-                placeholder="Số điện thoại"
+                placeholder={i18n.t('phone')}
                 keyboardType="phone-pad"
                 cursorColor={colors.fontMainColor}
                 selectionColor={colors.fontMainColor}
@@ -303,7 +304,7 @@ function Register() {
                 }}
               />
               <TextInput
-                placeholder="Mật khẩu"
+                placeholder={i18n.t('password')}
                 secureTextEntry
                 multiline={false}
                 cursorColor={colors.fontMainColor}
@@ -320,7 +321,7 @@ function Register() {
                   navigation.navigate(NAVIGATION_SCREEN.ForgotPassword)
                 }>
                 <TextDefault style={alignment.MTsmall} bold center>
-                  Quên mật khẩu?
+                  {i18n.t('forgotPassword')}?
                 </TextDefault>
               </TouchableOpacity>
             </View>

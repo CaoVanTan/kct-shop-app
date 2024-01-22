@@ -65,11 +65,11 @@ const ICONS_NAME = {
 };
 
 const SORT_DATA = {
-  default: 'Mặc định',
-  name_asc: 'Tăng dần (A-Z)',
-  name_desc: 'Giảm dần (Z-A)',
-  price_asc: 'Giá (Thấp - Cao)',
-  price_desc: 'Giá (Cao - Thấp)',
+  default: 'default',
+  name_asc: 'name_asc',
+  name_desc: 'name_desc',
+  price_asc: 'price_asc',
+  price_desc: 'price_desc',
 };
 
 const OPTION_ORDER = [
@@ -89,15 +89,15 @@ const OPTION_ORDER = [
 
 const LABEL_ADDRESS = [
   {
-    title: 'Nhà riêng',
+    title: 'house',
     value: 'home',
   },
   {
-    title: 'Văn phòng',
+    title: 'office',
     value: 'work',
   },
   {
-    title: 'Khác',
+    title: 'other',
     value: 'other',
   },
 ];

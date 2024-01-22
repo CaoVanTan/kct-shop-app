@@ -6,6 +6,7 @@ import RadioButton from '../../../components/FdRadioBtn/RadioBtn';
 import TextDefault from '../../../components/Text/TextDefault/TextDefault';
 import { alignment } from '../../../utils/alignment';
 import useStyle from './styles';
+import i18n from '../../../configs/i18n';
 
 const languageTypes = [
   { value: 'Tiếng Việt', code: 'vn', index: 0 },
@@ -20,7 +21,7 @@ function SettingModal(props) {
   return (
     <View style={styles.flex}>
       <TextDefault bolder H5 style={alignment.MTlarge}>
-        Chọn ngôn ngữ
+        {i18n.t('selectLanguage')}
       </TextDefault>
 
       {languageTypes.map((item, index) => (
@@ -48,14 +49,14 @@ function SettingModal(props) {
         style={styles.button}
         onPress={() => props.onSelectedLanguage(activeRadio)}>
         <TextDefault textColor={colors.lightBackground} bolder uppercase>
-          Hoàn thành
+          {i18n.t('done')}
         </TextDefault>
       </TouchableOpacity>
       <TouchableOpacity
         activeOpacity={0.7}
         style={[styles.width100, alignment.PBlarge, alignment.PTlarge]}
         onPress={() => props.onClose()}>
-        <TextDefault center>Hủy</TextDefault>
+        <TextDefault center>{i18n.t('cancelled')}</TextDefault>
       </TouchableOpacity>
     </View>
   );

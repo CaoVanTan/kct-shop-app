@@ -7,6 +7,7 @@ import { ICONS_NAME } from '../../../utils/constant';
 import { scale } from '../../../utils/scaling';
 import TextDefault from '../../Text/TextDefault/TextDefault';
 import useStyle from './styles';
+import i18n from '../../../configs/i18n';
 
 function CartComponent(props) {
   const { colors } = useTheme();
@@ -55,7 +56,7 @@ function CartComponent(props) {
           onPress={() => props.onPress(quantity)}
           style={styles.btnContainer}>
           <TextDefault textColor={colors.buttonText} H5 bold center>
-            Thêm vào giỏ hàng
+            {i18n.t('addToCart')}
           </TextDefault>
         </TouchableOpacity>
       </View>

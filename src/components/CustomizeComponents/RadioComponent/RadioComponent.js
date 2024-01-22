@@ -7,6 +7,7 @@ import RadioButton from '../../FdRadioBtn/RadioBtn';
 import TextDefault from '../../Text/TextDefault/TextDefault';
 import useStyle from './styles';
 import { formatCurrency } from '../../../utils/format';
+import i18n from '../../../configs/i18n';
 
 function RadioComponent(props) {
   const styles = useStyle();
@@ -46,12 +47,12 @@ function RadioComponent(props) {
                 H5>
                 {props.type === 'sugar'
                   ? option.title === 0
-                    ? 'Không đường'
-                    : `${option.title}% đường`
+                    ? i18n.t('noSugar')
+                    : `${option.title}% ${i18n.t('sugar')}`
                   : props.type === 'ice'
                   ? option.title === 0
-                    ? 'Không đá'
-                    : `${option.title}% đá`
+                    ? i18n.t('noIce')
+                    : `${option.title}% ${i18n.t('ice')}`
                   : option.title}
               </TextDefault>
             </View>

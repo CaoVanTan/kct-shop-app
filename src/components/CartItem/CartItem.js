@@ -10,6 +10,7 @@ import AppImage from '../AppImage/AppImage';
 import TextDefault from '../Text/TextDefault/TextDefault';
 import useStyle from './styles';
 import { formatCurrency } from '../../utils/format';
+import i18n from '../../configs/i18n';
 
 const cartItem = (props) => {
   const styles = useStyle();
@@ -27,10 +28,10 @@ const cartItem = (props) => {
       });
     }
     if (props.product.sugar) {
-      optionStr += `${props.product.sugar.title}% đường, `;
+      optionStr += `${props.product.sugar.title}% ${i18n.t('sugar')}, `;
     }
     if (props.product.ice) {
-      optionStr += `${props.product.ice.title}% đá`;
+      optionStr += `${props.product.ice.title}% ${i18n.t('ice')}`;
     }
 
     return optionStr;

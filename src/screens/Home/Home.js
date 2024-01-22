@@ -13,6 +13,7 @@ import { NAVIGATION_SCREEN } from '../../utils/constant';
 import { scale } from '../../utils/scaling';
 import useStyle from './styles';
 import { getCategories } from '../../api/Home/Home';
+import i18n from '../../configs/i18n';
 
 function Home() {
   const styles = useStyle();
@@ -22,7 +23,7 @@ function Home() {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: 'Trang chủ',
+      title: i18n.t('home'),
     });
   }, []);
 
@@ -73,7 +74,7 @@ function Home() {
             if (!loading) {
               return (
                 <TextDefault style={alignment.Psmall} H4 medium>
-                  Danh mục
+                  {i18n.t('category')}
                 </TextDefault>
               );
             }

@@ -8,6 +8,7 @@ import { COLORS } from '../../../theme';
 import { alignment } from '../../../utils/alignment';
 import { scale } from '../../../utils/scaling';
 import useStyle from './styles';
+import i18n from '../../../configs/i18n';
 
 const FdEmailBtn = (props) => {
   const styles = useStyle();
@@ -29,7 +30,7 @@ const FdEmailBtn = (props) => {
             height={scale(54)}
           /> */}
           <TextDefault style={alignment.MLxSmall} bold>
-            Đăng ký bằng Email
+            {i18n.t('signUpByEmail')}
           </TextDefault>
         </>
       )}

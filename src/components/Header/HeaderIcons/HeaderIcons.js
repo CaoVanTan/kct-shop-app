@@ -15,6 +15,7 @@ import { scale } from '../../../utils/scaling';
 import { FlashMessage } from '../../FlashMessage/FlashMessage';
 import TextDefault from '../../Text/TextDefault/TextDefault';
 import useStyles from './styles';
+import i18n from '../../../configs/i18n';
 
 function HeaderIcon({ icon, iconColor, iconSize = scale(20) }) {
   const { colors } = useTheme();
@@ -133,7 +134,7 @@ function RightButton(props) {
       navigation.navigate(NAVIGATION_SCREEN.Cart);
     } else {
       FlashMessage({
-        message: 'Giỏ hàng rỗng.',
+        message: i18n.t('cartIsEmpty'),
       });
     }
   }, [cartCount]);
